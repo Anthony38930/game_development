@@ -1,4 +1,4 @@
-#time into video 1:11:30 https://www.youtube.com/watch?v=8dfePlONtls
+# This game was built using this walkthrough as a guide to the core mechanics https://www.youtube.com/watch?v=8dfePlONtls
 
 import pygame # This is importing the pygame lbrary which allows us to call on predefined functions
 import time # This will import the time module allowing our program to gain access the system time
