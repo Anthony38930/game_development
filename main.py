@@ -216,7 +216,7 @@ class Game:
 
 
         
-            time.sleep(.1)
+            time.sleep(.015)
    
     
 if __name__ == "__main__":   #This is where we initialise the module
