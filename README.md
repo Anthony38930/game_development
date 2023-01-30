@@ -14,3 +14,5 @@ During my time following this walkthrough, it has become apparent that I keep mi
 Working through the tutorial, I came across an error which I must of made a while ago regarding the collision. I mistyped whilst following the code and I was getting an error until I combed through the source code to see what the mistake was.  
 
 28/01/23
+Created the game assets myself by utiling pixelart (https://www.pixilart.com/draw)
+At this stage I'm now looking at how to impliment collision detection around the borders of the window. Currently i'm finding it difficult to impliment this. I've tried several iterations of code and the game hits game over immediately.
