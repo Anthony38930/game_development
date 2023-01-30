@@ -7,6 +7,8 @@ import random # This will import the random module where we can randomise functi
 
 # Defining the global size variable for our assets. These assets are 40 x 40 pixels so by defining this, it allows us to call upon it when required for calculating positions.
 SIZE = 40 
+HEIGHT = 1000
+WIDTH = 800
 
 # By creating a class such as planet, we are creating an object in which we are able to create a set of methods which we can use throughout our game. 
 class Planet:
@@ -130,6 +132,7 @@ class Game:
                 return True
         return False
     
+       
     # Defining where our background image comes from for our game and where to display it from, 0, 0 being top left corner.
     def render_background(self):
         bg = pygame.image.load("resources/background.jpg").convert()
@@ -143,14 +146,19 @@ class Game:
         pygame.display.flip()
         
         #aliens colliding with planet
+       # for i in range(self.snake.length):
         if self.is_collision(self.alien.x[0], self.alien.y[0], self.planet.x, self.planet.y):
-            self.alien.increase_length()
-            self.planet.move()
+                self.alien.increase_length()
+                self.planet.move()
             
         #aliens colliding with themselves
-        for i in range(2, self.alien.length):
+        for i in range(3, self.alien.length):
             if self.is_collision(self.alien.x[0], self.alien.y[0], self.alien.x[i], self.alien.y[i]):
                 raise ("Collision Occured")
+        
+        # snake colliding with the boundries of the window
+        #if not (0 <= self.snake.x[0] <= 1000 and 0 <= self.snake.y[0] <= 800):
+            #return "Game Over"        
 
     def display_score(self):
         font = pygame.font.SysFont('arial',30)
