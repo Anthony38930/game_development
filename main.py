@@ -156,10 +156,10 @@ class Game:
             if self.is_collision(self.alien.x[0], self.alien.y[0], self.alien.x[i], self.alien.y[i]):
                 raise ("Collision Occured")
         
-        # snake colliding with the boundries of the window
-        #def check_bounds(self):
-        #if self.alien.x[0] < 0 or self.alien.x[0] >= WIDTH or self.alien.y[0] < 0 or self.alien.y[0] >= HEIGHT:
-        #    print("Game Over")           
+    # snake colliding with the boundries of the window
+    def check_bounds(self):
+        if self.alien.x[0] < 0 or self.alien.x[0] >= WIDTH or self.alien.y[0] < 0 or self.alien.y[0] >= HEIGHT:
+            print("Game Over")           
 
     def display_score(self):
         font = pygame.font.SysFont('arial',30)
@@ -209,10 +209,15 @@ class Game:
                         if event.key == K_RIGHT:
                             self.alien.move_right()
                                                 
-            
-                       
                 elif event.type == QUIT:
                     running = False
+            
+            if (self.alien.y[0] <= 0) or (self.alien.y[0] >= 800):
+                print(f"x = {self.alien.x[0]}, y = {self.alien.y[0]}")
+                self.show_game_over()
+                pause = True
+                self.reset()
+                
                     
             try:
                 if not pause:
