@@ -169,11 +169,18 @@ class Game:
     def show_game_over(self):
         self.render_background()
         font = pygame.font.SysFont('arial', 30)
-        line1 = font.render(f"Game is over! You uncontrollably ate to much, final score is:  {self.alien.length}", True, (255, 255, 255))
+        line1 = font.render(f"Game is over! You ate yourself, final score is:  {self.alien.length}", True, (255, 255, 255))
         self.surface.blit(line1, (100, 300))
         line2 = font.render("To play again press Enter. To exit press Escape!", True, (255, 255, 255))
         self.surface.blit(line2, (200, 350))
-
+    
+    def show_game_over_boundary(self):
+        self.render_background()
+        font = pygame.font.SysFont('arial', 30)
+        line1 = font.render(f"Game is over! You hit the wall, final score is:  {self.alien.length}", True, (255, 255, 255))
+        self.surface.blit(line1, (100, 300))
+        line2 = font.render("To play again press Enter. To exit press Escape!", True, (255, 255, 255))
+        self.surface.blit(line2, (200, 350))
         pygame.display.flip()
 
     def run(self):
@@ -214,10 +221,15 @@ class Game:
             
             if (self.alien.y[0] <= 0) or (self.alien.y[0] >= 800):
                 print(f"x = {self.alien.x[0]}, y = {self.alien.y[0]}")
-                self.show_game_over()
+                self.show_game_over_boundary()
                 pause = True
                 self.reset()
-                
+
+            if (self.alien.x[0] <= 0) or (self.alien.x[0] >= 1000):
+                print(f"x = {self.alien.x[0]}, y = {self.alien.y[0]}")
+                self.show_game_over_boundary()
+                pause = True
+                self.reset()    
                     
             try:
                 if not pause:
