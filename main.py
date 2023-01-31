@@ -157,8 +157,9 @@ class Game:
                 raise ("Collision Occured")
         
         # snake colliding with the boundries of the window
-        #if not (0 <= self.snake.x[0] <= 1000 and 0 <= self.snake.y[0] <= 800):
-            #return "Game Over"        
+        #def check_bounds(self):
+        #if self.alien.x[0] < 0 or self.alien.x[0] >= WIDTH or self.alien.y[0] < 0 or self.alien.y[0] >= HEIGHT:
+        #    print("Game Over")           
 
     def display_score(self):
         font = pygame.font.SysFont('arial',30)
