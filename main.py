@@ -73,7 +73,8 @@ class Alien:
         self.direction = 'down'
 
 
-    # I need further understanding behind the logic here - this was a lot to take in initially - Will be revisiting this stage
+    # As the snake "walks" it loops through all the body blocks and moves the block in the same direction that the previous body block moves, creating the animation of the alien
+    # moving. The program draws the snake on the screen through each loop.
     def walk(self):
         
         for i in range(self.length-1,0,-1):
@@ -169,7 +170,7 @@ class Game:
     def show_game_over(self):
         self.render_background()
         font = pygame.font.SysFont('arial', 30)
-        line1 = font.render(f"Game is over! You ate yourself, final score is:  {self.alien.length}", True, (255, 255, 255))
+        line1 = font.render(f"Game is over! You ate yourself, final score is:  {self.alien.length}", True, (255, 255, 255)) #Here using f strings, we can put a variable into a string
         self.surface.blit(line1, (100, 300))
         line2 = font.render("To play again press Enter. To exit press Escape!", True, (255, 255, 255))
         self.surface.blit(line2, (200, 350))
@@ -218,8 +219,9 @@ class Game:
                                                 
                 elif event.type == QUIT:
                     running = False
-            
-            if (self.alien.y[0] <= 0) or (self.alien.y[0] >= 800):
+            #The way the game works is by placing objects on the screen at certain coordinates. 1,1 would be top left for example and 800,800 is the bottom right. we can check to see if
+            #the position is greater than 800 or lower than 0, meaning the character is out of bounds.
+            if (self.alien.y[0] <= 0) or (self.alien.y[0] >= 800):  
                 print(f"x = {self.alien.x[0]}, y = {self.alien.y[0]}")
                 self.show_game_over_boundary()
                 pause = True
