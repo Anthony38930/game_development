@@ -34,3 +34,21 @@ Scott Morgan helped understand the collision issue I was having. After giving me
 
 
 Going forward the project will have more time committed to it. I'm working through the assesment document and compiling all the required assets. This document should see more updates.
+
+#### Criteria ####
+
+appeal to children aged around 8-12.
+
+The game involves navigating a character around an area collecting items and avoiding hazards.
+
+Collecting items adds to your score, colliding with hazards uses up lives, of which each game character only has a limited number.
+
+For example the player could direct a mouse around a house collecting pieces of cheese, but the mouse needs to avoid cats (hazards) which occupy the house. 
+
+The game should be timed, with player performance based on the score achieved over a certain time. 
+
+It should also have levels of difficulty with more difficult levels having more hazards, fewer lives or a shorter time. 
+
+The game should be exciting and fun to play, as well as visually appealing.
+
+*** This criteria has been met, its appealing to children, it involves moving an alien around space collecting planets and avoiding its growth and borders. The input is keyboard, --need to add timer to countdown-- it gets harder the longer they play. One life only!
