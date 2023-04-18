@@ -16,3 +16,21 @@ Working through the tutorial, I came across an error which I must of made a whil
 28/01/23
 Created the game assets myself by utiling pixelart (https://www.pixilart.com/draw)
 At this stage I'm now looking at how to impliment collision detection around the borders of the window. Currently i'm finding it difficult to impliment this. I've tried several iterations of code and the game hits game over immediately.
+
+18/04/23
+This project has been quiet a few months as other assignments had to take some precident, an update to the project:
+
+Scott Morgan commit:
+This commit adds the ability to catch particles exiting the y-value bounding box. In particular (aside from adding a .gitignore to exclude my virtual environment files). this PR adds the following to main.py (line 215-219):
+
+if (self.alien.y[0] <= 0) or (self.alien.y[0] >= 800):
+                print(f"x = {self.alien.x[0]}, y = {self.alien.y[0]}")
+                self.show_game_over()
+                pause = True
+                self.reset()
+This catches the exiting of the vertical domain. Horizontal is left to you!
+
+Scott Morgan helped understand the collision issue I was having. After giving me an example I was able to successfully impliment collision for the walls of the game.
+
+
+Going forward the project will have more time committed to it. I'm working through the assesment document and compiling all the required assets. This document should see more updates.
