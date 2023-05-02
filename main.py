@@ -109,6 +109,10 @@ class Game:
     def __init__(self):
         pygame.init()
 
+        self.timer_font = pygame.font.SysFont('arial', 30) # define the font and size for the timer display
+        self.start_time = pygame.time.get_ticks() # get the current time when the game starts
+        self.time_limit = 2 * 60 * 1000 # set the time limit to 2 minutes in milliseconds
+       
         # Using the set_caption function built into pygame, we can give our game a window title.    
         pygame.display.set_caption("Hungry Aliens")
 
@@ -121,6 +125,14 @@ class Game:
         self.planet = Planet(self.surface)
         self.planet.draw()
     
+    def display_time(self):
+        elapsed_time = pygame.time.get_ticks() - self.start_time
+        time_left = max(self.time_limit - elapsed_time, 0) // 1000 # calculate the time left in seconds
+        time_text = self.timer_font.render(f"Time Left: {time_left:02d}", True, (255, 255, 255))
+        self.surface.blit(time_text, (800, 100))
+        if time_left == 0:
+            self.show_game_over()
+            
     # Should the reset function be called we need to tell the game what to do, in this case, reset all the assets to their original position on the surface.
     def reset(self):
         self.alien = Alien(self.surface)
@@ -142,6 +154,7 @@ class Game:
     def play(self):
         self.render_background()
         self.alien.walk()
+        self.display_time()
         self.planet.draw()
         self.display_score()
         pygame.display.flip()
