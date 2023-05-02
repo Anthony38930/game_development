@@ -52,3 +52,17 @@ It should also have levels of difficulty with more difficult levels having more 
 The game should be exciting and fun to play, as well as visually appealing.
 
 *** This criteria has been met, its appealing to children, it involves moving an alien around space collecting planets and avoiding its growth and borders. The input is keyboard, --need to add timer to countdown-- it gets harder the longer they play. One life only!
+
+Tuesday 2nd May:#
+
+I define a new font and size for the timer display using pygame.font.SysFont, using the same settings as the other text.
+
+I am able to get the current time when the game starts using pygame.time.get_ticks() and save it in the start_time variable.
+
+Setting the timer to 2 minutes in milliseconds is done by multiplying 2 minutes by 60 seconds per minute and 1000 milliseconds per second and save it in the time_limit variable.
+
+I'm then defining a new method called display_time that calculates the elapsed time since the game started by subtracting the start_time from the current time using pygame.time.get_ticks(). Then calculate the time left in seconds by subtracting the elapsed time from the time_limit and using the max function to ensure that the time left never goes below 0. Finally divide the time left by 1000 to convert it from milliseconds to seconds.
+
+Render the time left as text using the timer font and size defined earlier, and blit it onto the surface at position (800, 100) using self.surface.blit. 
+
+I also have the code check if the time left is 0, and if so, we call the show_game_over method.
