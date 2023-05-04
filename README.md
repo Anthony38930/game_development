@@ -71,3 +71,24 @@ I also have the code check if the time left is 0, and if so, we call the show_ga
 Tuesday 2nd May #2:
 
 I'm creating a feedback form in Google Forms which I'm going to distribute to the class for some feedback. I'm aware of some small generic bugs and tweaks which could make the game run better, these will be addressed providing time isn't to tight. Depending of the feedback recieved, I'll be prioritising any issues found as a result of the testing document. 
+
+
+Thursday 4th May:
+
+Feedback information recieved: 
+
+** If I click in the againt the direction of the snake it causes the game to stop completely. Caused the game to stop completely having to make me close the program to restart.
+
+Sprites have black boxes around them and it only sometimes will end the game if you move back into the trail of aliens.
+
+Make the snake move slower at the start but speed up as it grows.
+
+It was fun to play. I suggest adding a bit where it tells you your high score to play. This can incentivise people to play more.**
+
+
+Within the timeframe I have available, making the sprite have a transparent background would be possible, it would also be worth looking at why the game occasionally bugs out when pressing the key that moves back on itself. 
+When looking at the PNG file, the white space is actually already transparent, however that is not being projected onto the game background. i'll have to spend some time looking into what is causing this issue.
+
+![image](https://user-images.githubusercontent.com/92015993/236187737-15bd45f8-aa62-4c69-80c5-c0fc7fdb5091.png)
+
+This was caused by the Alpha channel of the PNG file to not be used. By loading the image with convert_alpha() we see that the alien no longer has the white parameters.
