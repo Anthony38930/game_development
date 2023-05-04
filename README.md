@@ -91,4 +91,4 @@ When looking at the PNG file, the white space is actually already transparent, h
 
 ![image](https://user-images.githubusercontent.com/92015993/236187737-15bd45f8-aa62-4c69-80c5-c0fc7fdb5091.png)
 
-This was caused by the Alpha channel of the PNG file to not be used. By loading the image with convert_alpha() we see that the alien no longer has the white parameters.
+This was caused by the Alpha channel of the PNG file to not be used. By loading the image with convert_alpha() we see that the alien no longer has the white parameters. I did the same to the planet asset too which makes the game look cleaner. 
